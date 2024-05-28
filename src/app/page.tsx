@@ -1,5 +1,7 @@
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://utfs.io/f/e3efbb6c-a4e9-4cb2-b523-96518508737c-uzm0qg.jpg",
   "https://utfs.io/f/ce5c9b37-962c-4648-a855-0e1ebf0e2e96-urjojl.jpg",
@@ -10,7 +12,7 @@ const mockUrls = [
 ];
 
 const mockedImages = mockUrls.map((url, index) => ({
-  id: url + 1,
+  id: index + 1,
   url,
 }));
 export default async function HomePage() {
