@@ -16,16 +16,22 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body className="flex flex-col gap-4">
-          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-          <TopNav />
-          <body>{children}</body>
+          <div className="grid h-screen grid-rows-[auto,1fr]">
+            <TopNav />
+            <main className="overflow-y-scroll">{children}</main>
+            {modal}
+          </div>
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
