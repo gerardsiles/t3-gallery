@@ -10,9 +10,9 @@
 - [x] Actually set up a database (vercel postgress)
 - [x] Add Attach database to UI
 - [x] Add Auth (w/ clerk)
+- [x] Add image upload
 - [ ] Taint (server-only)
 - [ ] useNext/image component
-- [ ] Add image upload
 - [ ] Error management (w/ Sentry)
 - [ ] Add routing/image page (parallel route)
 - [ ] Delete button (w/Server actions)
